@@ -1,0 +1,175 @@
+body {
+  /* min-height: 100vh; */
+  /* min-height: auto; */
+  background: linear-gradient(rgb(0, 0, 0) 0%, #37503A 120%);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  overflow-y: auto;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+/* CSS */
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.tapper:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.tapper:active {
+  transform: scale(0.95);
+  transition: all 0.3s ease;
+}
+
+.button-85:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.button-85:active {
+  transform: scale(0.98);
+  transition: all 0.3s ease;
+}
+
+/* Target the scrollbar track */
+::-webkit-scrollbar {
+  width: 2px;
+  /* Width of the scrollbar */
+  height: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* Color of the scrollbar handle on hover */
+}
+
+/* Handle on scrollbar press */
+::-webkit-scrollbar-thumb:active {
+  background: #333;
+  /* Color of the scrollbar handle when pressed */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #dbd9d9;
+  /* Color of the scrollbar handle */
+  border-radius: 16px;
+  /* Rounded corners of the scrollbar handle */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #454545;
+  /* Color of the scrollbar track */
+}
+
+/* Corner */
+::-webkit-scrollbar-corner {
+  background: #454545;
+  /* Color of the scrollbar track */
+}
+
+.genre {
+  width: auto;
+  padding: 0.4rem 1rem 0.4rem 1rem;
+  border-radius: 3rem;
+  height: 2rem;
+  background-color: #2A2A2A;
+  font-weight: 300;
+  /* min-width:fit-content; */
+  max-width: 15rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 992px) {
+  .genre {
+    min-width: fit-content;
+  }
+}
+
+.fader {
+  opacity: 0;
+  animation: fadeInAnimation 2s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
